@@ -24,11 +24,14 @@ class QuoteList extends Component {
 
 
         axios.get(url).then(response => {
-            const  quotes = Object.keys(response.data).map(id => {
-                return {...response.data[id], id};
-            });
-
-            this.setState({quotes})
+            if (response.data === null) {
+                alert('No quotes! Please, submit new quote!')
+            } else {
+                const  quotes = Object.keys(response.data).map(id => {
+                    return {...response.data[id], id};
+                });
+                this.setState({quotes})
+            }
         });
     }
 
