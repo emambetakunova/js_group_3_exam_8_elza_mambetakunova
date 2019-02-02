@@ -11,12 +11,9 @@ class QuoteForm extends Component {
             this.state = {...props.quotes};
         } else {
             this.state = {
-                quotes: {
                     quoteText: '',
                     category: Object.keys(CATEGORIES)[0],
                     author: ''
-                }
-
             };
         }
     }
