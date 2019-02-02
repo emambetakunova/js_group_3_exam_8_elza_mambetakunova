@@ -27,7 +27,10 @@ class QuoteEdit extends Component {
     };
 
     render() {
-        let formQuote = <QuoteForm onSubmit={this.editQuote} quotes={this.state.quotes}/>;
+        let formQuote = <QuoteForm
+            onSubmit={this.editQuote}
+            quotes={this.state.quotes}
+        />;
 
         if (!this.state.quotes) {
             formQuote = <Spinner />
