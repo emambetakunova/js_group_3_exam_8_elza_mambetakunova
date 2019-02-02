@@ -1,25 +1,28 @@
 .Main-nav {
-    display: flex;
-    justify-content: space-between;
     background: #ffbb42;
     padding: 20px 0;
     margin: 0 0 20px 0;
+    height: 30px;
+}
+
+.Menu {
+    float: right;
 }
 .Main-nav a {
     text-decoration: none;
-    text-transform: uppercase;
     padding: 15px 45px 0 0;
     margin: 0;
     list-style: none;
     font-size: 16px;
     font-weight: 600;
-    display: inline-block;
     color: #000;
 
 }
 .Logo {
     display: inline-block;
-    font-size: 40px;
+    font-size: 30px;
+    text-transform: uppercase;
     margin: 0 0 0 40px;
     font-weight: bold;
+    float: left;
 }
