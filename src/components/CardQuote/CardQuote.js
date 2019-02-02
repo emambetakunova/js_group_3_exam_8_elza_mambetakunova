@@ -10,7 +10,7 @@ class CardQuote extends Component {
                 <p>{this.props.author}</p>
                 <p>{this.props.quoteText}</p>
                 <button onClick={this.props.edit}>Edit</button>
-                {/*<button onClick={this.props.delete}>Delete</button>*/}
+                <button onClick={this.props.delete}>Delete</button>
             </div>
         );
     }
