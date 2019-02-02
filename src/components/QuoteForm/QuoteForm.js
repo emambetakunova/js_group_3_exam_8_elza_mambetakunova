@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {CATEGORIES} from "../../constans";
 
 import './QuoteForm.css'
+import Spinner from "../UI/Spinner/Spinner";
 
 class QuoteForm extends Component {
 
@@ -13,7 +14,8 @@ class QuoteForm extends Component {
             this.state = {
                     quoteText: '',
                     category: Object.keys(CATEGORIES)[0],
-                    author: ''
+                    author: '',
+                    loading: true
             };
         }
     }
@@ -30,7 +32,7 @@ class QuoteForm extends Component {
     };
 
     render() {
-        return (
+        let divForm = (
             <form className="QuoteForm" onSubmit={this.submitHandler}>
                 <p>Category: </p>
                 <select name="category" onChange={this.valueChanged} value={this.state.category} className="SelectQuote">
@@ -46,6 +48,15 @@ class QuoteForm extends Component {
                           onChange={this.valueChanged} className="InputQuote"/>
                 <button type="submit" className="Save">Save</button>
             </form>
+        );
+
+        if (this.state.loading) {
+            divForm = <Spinner/>
+        }
+        return (
+           <div>
+               {divForm}
+           </div>
         );
     }
 }
