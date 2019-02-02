@@ -25,6 +25,7 @@ class QuoteList extends Component {
 
         axios.get(url).then(response => {
             if (response.data === null) {
+                this.setState({quotes: response.data})
                 alert('No quotes! Please, submit new quote!')
             } else {
                 const  quotes = Object.keys(response.data).map(id => {
@@ -89,6 +90,7 @@ class QuoteList extends Component {
                         ))}
                     </div>
                     <div className="AllQuotes">
+                        <h2>All quotes: </h2>
                         {quotes}
                     </div>
                 </div>

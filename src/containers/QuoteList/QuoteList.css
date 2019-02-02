@@ -6,9 +6,11 @@
 
 .Category {
     width: 30%;
+    margin-top: 28px;
     margin-left: 40px;
     border: 1px solid #ffbb42;
     border-radius: 5px;
+    height: 80vh;
 }
 
 .Category a {
