@@ -73,8 +73,8 @@ class QuoteList extends Component {
             <Fragment>
                 <Header/>
                 <div className="MainWrap">
-
                     <div className="Category">
+                        <h3>Categories: </h3>
                         <NavLink to="/">All quotes</NavLink>
                         {Object.keys(CATEGORIES).map(categoryId => (
                             <NavLink key={categoryId}

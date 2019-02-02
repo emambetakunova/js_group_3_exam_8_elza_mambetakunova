@@ -6,14 +6,21 @@
 
 .Category {
     width: 30%;
+    margin-left: 40px;
+    border: 1px solid #ffbb42;
+    border-radius: 5px;
 }
 
 .Category a {
     display: block;
+    margin-bottom: 20px;
     text-decoration: none;
     color: #000000;
+    text-align: start;
+    margin-left: 40px;
 }
 
 .AllQuotes {
     width: 70%;
+    margin: 0;
 }
