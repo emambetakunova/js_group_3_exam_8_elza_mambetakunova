@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {CATEGORIES} from "../../constans";
 
+import './QuoteForm.css'
+
 class QuoteForm extends Component {
 
     constructor(props) {
@@ -34,18 +36,18 @@ class QuoteForm extends Component {
         return (
             <form className="QuoteForm" onSubmit={this.submitHandler}>
                 <p>Category: </p>
-                <select name="category" onChange={this.valueChanged} value={this.state.category}>
+                <select name="category" onChange={this.valueChanged} value={this.state.category} className="SelectQuote">
                     {Object.keys(CATEGORIES).map(categoryId => (
                         <option key={categoryId} value={categoryId}>{CATEGORIES[categoryId]}</option>
                     ))}
                 </select>
                 <p>Author: </p>
                 <input type="text" name="author" placeholder="Author" value={this.state.author}
-                       onChange={this.valueChanged}/>
+                       onChange={this.valueChanged} className="InputQuote" />
                 <p>Quote text: </p>
                 <textarea name="quoteText" placeholder="Quote text" value={this.state.quoteText}
-                          onChange={this.valueChanged}/>
-                <button type="submit">Save</button>
+                          onChange={this.valueChanged} className="InputQuote"/>
+                <button type="submit" className="Save">Save</button>
             </form>
         );
     }
