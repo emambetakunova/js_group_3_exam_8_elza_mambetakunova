@@ -1,0 +1,19 @@
+.MainWrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.Category {
+    width: 30%;
+}
+
+.Category a {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+}
+
+.AllQuotes {
+    width: 70%;
+}
