@@ -5,8 +5,8 @@ class QuoteForm extends Component {
 
     constructor(props) {
         super(props);
-        if (props.posts) {
-            this.state = {...props.posts};
+        if (props.quotes) {
+            this.state = {...props.quotes};
         } else {
             this.state = {
                 quotes: {
@@ -43,7 +43,7 @@ class QuoteForm extends Component {
                 <input type="text" name="author" placeholder="Author" value={this.state.author}
                        onChange={this.valueChanged}/>
                 <p>Quote text: </p>
-                <textarea name="quoteText" placeholder="Quote text" value={this.state.description}
+                <textarea name="quoteText" placeholder="Quote text" value={this.state.quoteText}
                           onChange={this.valueChanged}/>
                 <button type="submit">Save</button>
             </form>
