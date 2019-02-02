@@ -64,7 +64,7 @@ class QuoteList extends Component {
                     author={quote.author}
                     quoteText={quote.quoteText}
                     edit={() => this.editQuote(quote.id)}
-                    // delete={() => this.deleteQuote(quote.id)}
+                    delete={() => this.deleteQuote(quote.id)}
                 />
             ))
         }
