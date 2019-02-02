@@ -11,7 +11,6 @@ class QuoteEdit extends Component {
 
     getUrl = () => {
         const id = this.props.match.params.id;
-        console.log(id);
         return 'quotes/' + id + '.json'
     };
 
@@ -35,7 +34,7 @@ class QuoteEdit extends Component {
         }
         return (
             <div>
-                <h2>Edit form</h2>
+                <h2>Edit quote: </h2>
                 {formQuote}
             </div>
         );

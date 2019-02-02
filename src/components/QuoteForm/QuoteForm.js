@@ -3,11 +3,21 @@ import {CATEGORIES} from "../../constans";
 
 class QuoteForm extends Component {
 
-    state = {
-        quoteText: '',
-        category: Object.keys(CATEGORIES)[0],
-        author: ''
-    };
+    constructor(props) {
+        super(props);
+        if (props.posts) {
+            this.state = {...props.posts};
+        } else {
+            this.state = {
+                quotes: {
+                    quoteText: '',
+                    category: Object.keys(CATEGORIES)[0],
+                    author: ''
+                }
+
+            };
+        }
+    }
 
     valueChanged = event => {
         const {name, value} = event.target;
@@ -23,7 +33,6 @@ class QuoteForm extends Component {
     render() {
         return (
             <form className="QuoteForm" onSubmit={this.submitHandler}>
-                <h3>Submit new quote</h3>
                 <p>Category: </p>
                 <select name="category" onChange={this.valueChanged} value={this.state.category}>
                     {Object.keys(CATEGORIES).map(categoryId => (
@@ -31,9 +40,11 @@ class QuoteForm extends Component {
                     ))}
                 </select>
                 <p>Author: </p>
-                <input type="text" name="author" placeholder="Author" value={this.state.author} onChange={this.valueChanged}/>
+                <input type="text" name="author" placeholder="Author" value={this.state.author}
+                       onChange={this.valueChanged}/>
                 <p>Quote text: </p>
-                <textarea name="quoteText" placeholder="Quote text" value={this.state.description} onChange={this.valueChanged}/>
+                <textarea name="quoteText" placeholder="Quote text" value={this.state.description}
+                          onChange={this.valueChanged}/>
                 <button type="submit">Save</button>
             </form>
         );

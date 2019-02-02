@@ -3,16 +3,20 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import './App.css';
 
+import QuoteAdd from "./containers/QuoteAdd/QuoteAdd";
+import QuoteList from "./containers/QuoteList/QuoteList";
+import QuoteEdit from "./containers/QuoteEdit/QuoteEdit";
+
 class App extends Component {
   render() {
     return (
       <div className="App">
           <BrowserRouter>
               <Switch>
-                  <Route path="/" exact component={QuoteBuilder} />
-                  <Route path="/quote/add" component={QuoteAdd}/>
-                  {/*<Route path="/quote/:id" component={FullQuote}/>*/}
-                  {/*<Route path="/quote/:id/edit" component={PostEdit}/>*/}
+                  <Route path="/" exact component={QuoteList} />
+                  <Route path="/add" component={QuoteAdd}/>
+                  <Route path="/quotes/:categoryId" component={QuoteList}/>
+                  <Route path="/quotes/:id/edit" component={QuoteEdit}/>
               </Switch>
           </BrowserRouter>
       </div>

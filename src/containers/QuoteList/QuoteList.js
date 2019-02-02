@@ -24,7 +24,6 @@ class QuoteList extends Component {
 
 
         axios.get(url).then(response => {
-            console.log(response);
             const  quotes = Object.keys(response.data).map(id => {
                 return {...response.data[id], id};
             });
@@ -51,9 +50,7 @@ class QuoteList extends Component {
 
     deleteQuote = (id) => {
         axios.delete('/quotes/' + id + '.json').then(() => {
-            this.props.history.push({
-                pathname: '/'
-            });
+            this.loadData()
         });
     };
 
@@ -67,7 +64,7 @@ class QuoteList extends Component {
                     author={quote.author}
                     quoteText={quote.quoteText}
                     edit={() => this.editQuote(quote.id)}
-                    delete={() => this.deleteQuote(quote.id)}
+                    // delete={() => this.deleteQuote(quote.id)}
                 />
             ))
         }
