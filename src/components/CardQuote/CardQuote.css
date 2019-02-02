@@ -1,0 +1,15 @@
+.CardQuote{
+    max-width: 600px;
+    margin: 30px auto;
+    border: 1px solid #ffbb42;
+    padding: 20px;
+    border-radius: 5px;
+}
+.Edit,
+.Delete{
+    background: #ffbb42;
+    border: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px;
+}
